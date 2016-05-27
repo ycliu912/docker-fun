@@ -1,0 +1,5 @@
+/data/var/jenkins_home:/var/jenkins_home
+
+/usr/local/apache-tomcat-7.0.68/bin
+
+/data/douins/dev/agency/war

@@ -1,0 +1,28 @@
+{
+	"variables": {
+		"SHELL": "/bin/sh"
+	},
+	"builders": [
+		{
+			"type": "docker",
+			"image": "ubuntu",
+			"commit": true
+		}
+	],
+	"provisioners": [
+		{
+			"type": "shell",
+			"environment_vars": [
+			    "SHELL=/bin/sh"
+				],
+			"script": "exec_redis.sh"
+		}
+	],
+	"post-processors": [
+		{
+			"type": "docker-tag",
+			"repository": "redis-test",
+			"tag": "packer"
+		}
+	]
+}
