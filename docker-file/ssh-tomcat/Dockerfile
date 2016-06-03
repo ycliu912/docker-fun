@@ -16,26 +16,26 @@ RUN echo "root:root" | chpasswd
 #RUN add-apt-repository ppa:webupd8team/java
 #RUN apt-get update
 #RUN apt-get install -y vim wget curl oracle-java7-installer tomcat7
-:<<!!
-RUN apt-get update -y                             && \
-    apt-get install python-software-properties -y && \
-    apt-get install software-properties-common -y && \
-    add-apt-repository ppa:webupd8team/java -y    && \
-    apt-get update -y                             && \
-    apt-get install oracle-java7-installer -y     && \
-    oracle-java7-set-default
+#:<<!!
+#RUN apt-get update -y                             && \
+#    apt-get install python-software-properties -y && \
+#    apt-get install software-properties-common -y && \
+#    add-apt-repository ppa:webupd8team/java -y    && \
+#    apt-get update -y                             && \
+#    apt-get install oracle-java7-installer -y     && \
+#    oracle-java7-set-default
 
 
-RUN update-alternatives --display java
-RUN echo "JAVA_HOME=/usr/lib/jvm/java-7-oracle">> /etc/environment
-RUN echo "JAVA_HOME=/usr/lib/jvm/java-7-oracle">> /etc/default/tomcat7
+#RUN update-alternatives --display java
+#RUN echo "JAVA_HOME=/usr/lib/jvm/java-7-oracle">> /etc/environment
+#RUN echo "JAVA_HOME=/usr/lib/jvm/java-7-oracle">> /etc/default/tomcat7
 
 
-EXPOSE 22
-EXPOSE 8080
+#EXPOSE 22
+#EXPOSE 8080
 
-ENTRYPOINT service tomcat start && /usr/sbin/sshd -D
-!!
+#ENTRYPOINT service tomcat start && /usr/sbin/sshd -D
+#!!
 
 EXPOSE 22
 ENTRYPOINT /usr/sbin/sshd -D
