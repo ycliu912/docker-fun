@@ -18,7 +18,6 @@ RUN echo "root:root" | chpasswd
 #RUN apt-get install -y vim wget curl oracle-java7-installer tomcat7
 RUN apt-get update -y                             && \
     apt-get install software-properties-common -y && \
-    apt-get install python-software-properties -y && \
     add-apt-repository ppa:webupd8team/java -y    && \
     apt-get update -y                             && \
     apt-get install oracle-java7-installer -y     && \
