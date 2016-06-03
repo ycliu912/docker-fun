@@ -16,6 +16,7 @@ RUN echo "root:root" | chpasswd
 #RUN add-apt-repository ppa:webupd8team/java
 #RUN apt-get update
 #RUN apt-get install -y vim wget curl oracle-java7-installer tomcat7
+:<<!!
 RUN apt-get update -y                             && \
     apt-get install python-software-properties -y && \
     apt-get install software-properties-common -y && \
@@ -34,3 +35,7 @@ EXPOSE 22
 EXPOSE 8080
 
 ENTRYPOINT service tomcat start && /usr/sbin/sshd -D
+!!
+
+EXPOSE 22
+ENTRYPOINT /usr/sbin/sshd -D
