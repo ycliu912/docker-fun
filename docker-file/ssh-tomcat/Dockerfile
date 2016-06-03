@@ -3,7 +3,7 @@ FROM ubuntu:12.04
 MAINTAINER ycliu912 "ycliu1283@gmail.com"
 
 #http://stackoverflow.com/questions/25019183/docker-java7-install-fail
-ENV DEBIAN_FRONTEND noninieractive
+ENV DEBIAN_FRONTEND noninteractive
 
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe"> /etc/apt/sources.list
 RUN apt-get update
