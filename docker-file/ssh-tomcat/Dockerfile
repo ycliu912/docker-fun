@@ -1,5 +1,5 @@
 #VERSIION 0.0.1
-FROM ubuntu:12.04
+FROM ubuntu:14.04
 MAINTAINER ycliu912 "ycliu1283@gmail.com"
 
 #http://stackoverflow.com/questions/25019183/docker-java7-install-fail
