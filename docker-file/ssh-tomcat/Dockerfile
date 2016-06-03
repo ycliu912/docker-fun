@@ -12,10 +12,17 @@ RUN mkdir -p /var/run/sshd
 
 RUN echo "root:root" | chpasswd
 
-RUN apt-get install python-software-properties
-RUN add-apt-repository ppa:webupd8team/java
-RUN apt-get update
-RUN apt-get install -y vim wget curl oracle-java7-installer tomcat7
+#RUN apt-get install python-software-properties
+#RUN add-apt-repository ppa:webupd8team/java
+#RUN apt-get update
+#RUN apt-get install -y vim wget curl oracle-java7-installer tomcat7
+RUN apt-get update -y                             && \
+    apt-get install python-software-properties -y && \
+    add-apt-repository ppa:webupd8team/java -y    && \
+    apt-get update -y                             && \
+    apt-get install oracle-java7-installer -y     && \
+    oracle-java7-set-default
+
 
 RUN update-alternatives --display java
 RUN echo "JAVA_HOME=/usr/lib/jvm/java-7-oracle">> /etc/environment
