@@ -1,5 +1,5 @@
 #VERSIION 0.0.1
-FROM ubuntu
+FROM ubuntu:12.04
 MAINTAINER ycliu912 "ycliu1283@gmail.com"
 
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe"> /etc/apt/sources.list
